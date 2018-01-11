@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { inject, observer, PropTypes as MobxTypes } from 'mobx-react';
-import Input from 'react-toolbox/lib/input';
-import Button from 'react-toolbox/lib/button';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import RegisterForm from './LoginForm';
 import Binder from '../utils/binder';
@@ -25,14 +25,18 @@ class Register extends React.Component {
     return (
       <div>
         <form>
-          <Input {...binder.bindInput('email')} type="text" />
-          <Input {...binder.bindInput('password')} type="password" />
-          <Input {...binder.bindInput('passwordRepeat')} type="password" />
-          <Button type="submit" onClick={this.handleSubmit} />
+          <TextField {...binder.bindInput('email')} type="text" />
+          <TextField {...binder.bindInput('password')} type="password" />
+          <TextField {...binder.bindInput('passwordRepeat')} type="password" />
+          <RaisedButton type="submit" onClick={this.handleSubmit} />
         </form>
       </div>
     )
   }
+}
+
+Register.propTypes = {
+  authStore: MobxTypes.observableObject
 }
 
 export default Register;

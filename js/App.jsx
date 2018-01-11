@@ -51,29 +51,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <Provider {...tores}
-    )
-
-
-
-    if (!this.props.authStore.authenticated) {
-      return (
-        <div className="app">
+      <div className="app">
+        {!this.props.authStore.authenticated ?
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route component={Login} />
           </Switch>
-        </div>
-      );
-    }
-    return (
-      <div className="app">
-        <Route path="/home" component={Home} />
+        :
+          <Route path="/home" component={Home} />
+        }
       </div>
     );
   };
-
 };
 
 App.propTypes = {

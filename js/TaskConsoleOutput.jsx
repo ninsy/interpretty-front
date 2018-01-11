@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import styles from './Home.css';
+import styles from './TaskConsoleOutput.css';
 
-class Home extends React.Component {
+class TaskConsoleOutput extends React.Component {
   render() {
     return (
       <div></div>
@@ -12,4 +12,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default TaskConsoleOutput;
